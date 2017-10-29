@@ -1,0 +1,221 @@
+/*
+Theme Name: New theme
+Theme URI: 
+Author: Ashwin/Chris
+Author URI: 
+Description: Default theme
+Version: 1.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: 
+Tags: 
+*/
+
+@import  url('https://fonts.googleapis.com/css?family=Roboto:100|Carrois+Gothic');
+html,
+body {
+  font-family: 'Carrois Gothic';
+}
+.navbar {
+  background-color: transparent;
+  border: 0px;
+  margin: 0px;
+}
+@media (min-width: 768px) {
+  .navbar {
+    height: 8%;
+  }
+}
+.navbar-brand {
+  color: #eeeeee;
+  font-family: 'Roboto';
+  font-size: 1.5em;
+  padding: 15px 10px;
+}
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: #6fa8dc;
+}
+.navbar-nav > li > a {
+  color: #dddddd;
+  font-family:'Carrois Gothic';
+}
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus {
+  background-color: transparent;
+  color: #6fa8dc;
+}
+.navbar-nav .active {
+  background-color: #ededed;
+}
+.navbar-nav .active > a {
+  color: #2d70ad;
+}
+.navbar-toggle {
+  border-color: #ddd;
+}
+.navbar-toggle:hover,
+.navbar-toggle:focus {
+  background-color: #ddd;
+}
+.navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.jumbotron {
+  background-color: #333333;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+.jumbotron h1, h2 {
+  color: #ffffff;
+}
+h1 {
+  font-family: 'Roboto';
+  font-size: 5em;
+  margin-top: 12.5vh;
+  margin-bottom: 0px;
+}
+h2 {
+  font-family: 'Carrois Gothic';
+  font-size: 1.5em;
+}
+@media (min-width: 992px) {
+  h1 {
+    font-size: 10em !important;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
+}
+
+.jumbotron {
+      background-size: cover;
+    background-position: center;
+  background-repeat: no-repeat;
+  height: auto;
+   
+  width: 100%;
+   /* background-attachment: fixed;*/
+     min-height: 100vh;
+}
+
+#lake {
+  background-image: linear-gradient(rgba(20,20,20, .5), rgba(20,20,20, .5)), url("lake.jpg");
+
+}
+#dna {
+  background-image: linear-gradient(rgba(20,20,20, .5), rgba(20,20,20, .5)), url("dna.jpg");
+}
+#doctor {
+  background-image: linear-gradient(rgba(20,20,20, .5), rgba(20,20,20, .5)), url("doctor.jpg");
+}
+#mail {
+  background-image: linear-gradient(rgba(20,20,20, .5), rgba(20,20,20, .5)), url("mail.jpg");
+}
+
+
+
+    @media (min-width: 1200px) {
+    .col-lg-5ths {
+      position: relative;
+      min-height: 1px;
+      padding: 10px;
+      width: 20%;
+      float: left;
+    }
+  }
+  .container-fluid {
+    text-align: center;
+  }
+  h1, p {
+    color: #444;
+  }
+  h2 {
+    margin-bottom: 7.5vh;
+  }
+  h2, h3 {
+    color: #888;
+  }
+  .jumbotron h2 {
+    color: #fff;
+  }
+  .panel
+  a:hover,
+  a:after,
+  a:visited,
+  a:active,
+  a:link {
+    text-decoration: none;
+  }
+  .panel-body p {
+    text-align: justify;
+  }
+  .panel {
+    border: 0px;
+  }
+  .row {
+    text-align: center;
+  }
+  .row img {
+    width: 50%;
+    height: auto;
+    margin: auto;
+  }
+  #stanford {
+    background: linear-gradient(rgba(20,20,20, .5), rgba(20,20,20, .5)), url("stanford.jpg") center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+  }
+
+
+.a-z {
+
+}
+
+#a-z #home {
+  background: linear-gradient(rgba(20,20,20, .5), rgba(20,20,20, .5)), url("../diseases/dna.jpg") center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 0px;
+}
+
+.postDiv h2 {
+	font-size: 30px;
+}
+
+.postDiv {
+    margin-bottom: 20px;
+}
+
+.postDiv > .row > .col {
+    background-color: rgba(255,255,255,.7);
+}
+
+.jumbotron.frontPane {
+   background-color: rgba(255,255,255,.7);
+    margin-bottom: 50px;
+    min-height: 0px;
+}
+
+.jumbotron.frontPane.marginTop {
+	margin-top: 50vh;
+}
+
+.jumbotron.frontPane h2 {
+    color: black;
+    font-weight: bold;
+}
+
+.jumbotron .downArrow {
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+}
