@@ -20,101 +20,166 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project AmaRNA- <? echo get_the_title(); ?></title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+  $('#diseases-dropdown').click(function(){
+    menuResolveConflict('diseases','about');
+  });
+  $('#about-dropdown').click(function(){
+    menuResolveConflict('about','diseases');
+  });
+  function menuResolveConflict(id1, id2) {
+    $('#'+id1+'-dropdown').toggleClass('active-menu');
+    if($('#'+id2+'-dropdown').hasClass('active-menu')){
+      $('#'+id2+'-dropdown').removeClass('active-menu');
+    }
+    $('#'+id1+'-menu').toggleClass('display');
+    if($('#'+id2+'-menu').hasClass('display')){
+      $('#'+id2+'-menu').removeClass('display');
+    }
+  }
+});
+
+  </script>
   <?php wp_head(); ?>
 </head>
-<body id="<? echo slug(); ?>" class="<? echo $bodyClass ?>">
-  <div class="jumbotron" id="<? echo is_front_page() ? 'lake' : get_post_meta(get_the_ID(), 'id', TRUE) ?>">
-    <nav class="navbar">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Project AmaRNA</a>
+<body>
+
+<div id="top-nav">
+    <nav>
+      <div class="container-fluid" id="navbar">
+        <div class="row">
+          <div class="col">
+            <a id="diseases-dropdown">Diseases
+              <svg>
+                <polygon points="0,3 12,3 6,9"/>
+              </svg>
+            </a>
+          </div>
+          <div class="col-auto">
+            <a href="index.html" id="logo">
+              <img src="images/navbar.png">
+            </a>
+          </div>
+          <div class="col">
+            <a id="about-dropdown">About
+              <svg>
+                <polygon points="0,3 12,3 6,9"/>
+              </svg>
+            </a>
+          </div>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav navbar-right">
-          <?php 
-          	#global $post;
-          	function slug() {
-          		if (is_front_page()) {
-          			$post_slug='';
-          		}
-          		else {
-          			global $post;
-          			$post_slug=$post->post_name;
-          			#$post_slug='/';
-          		}
-          		#echo $post_slug;
-          		return $post_slug;
-
-    			}
-
-	    		function activeClass($cl) {
-	    			if (slug() == $cl) {
-	    				return "class='active'";
-	    			}
-	    			else {
-	    				return "";
-	    			}
-	    		}
-          ?>
-            <li <?php echo activeClass(''); ?> ><a href="/">Home</a></li>
-            <li <?php echo activeClass('diseases'); ?> ><a href="/diseases">Diseases</a></li>
-            <li <? echo activeClass('blog'); ?> ><a href="/blog">Blog</a></li>
-            <li <? echo activeClass('about'); ?> ><a href="/about">About</a></li>
-            <li <? echo activeClass('contact'); ?> ><a href="/contact">Contact</a></li>
-          </ul>
+      </div>
+      <div id="diseases-menu">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="row">
+                <div class="col-5 col-sm-3 col-lg-12">
+                  <a class="menu-button">
+                    <img src="images/index.png">
+                  </a>
+                  <h5>Index</h5>
+                </div>
+                <div class="col-7 col-sm-9 col-lg-12"><p>Browse the alphabetized list of diseases we have information about, along with a short description of each.</p></div>
+              </div>
+              <hr class="hidden-lg-up">
+            </div>
+            <div class="col-lg-3">
+              <div class="row">
+                <div class="col-5 col-sm-3 col-lg-12">
+                  <a class="menu-button">
+                    <img src="images/research.png">
+                  </a>
+                  <h5>Research</h5>
+                </div>
+                <div class="col-7 col-sm-9 col-lg-12"><p>Learn about the latest research our pre-med students are currently exploring and/or conducting.</p></div>
+              </div>
+              <hr class="hidden-lg-up">
+            </div>
+            <div class="col-lg-3">
+              <div class="row">
+                <div class="col-5 col-sm-3 col-lg-12">
+                  <a class="menu-button">
+                    <img src="images/glossary.png">
+                  </a>
+                  <h5>Glossary</h5>
+                </div>
+                <div class="col-7 col-sm-9 col-lg-12"><p>Find the definitions of scientific terms here. We'll break down those seemingly complex terms for you to help you understand them.</p></div>
+              </div>
+              <hr class="hidden-lg-up">
+            </div>
+            <div class="col-lg-3">
+              <div class="row">
+                <div class="col-5 col-sm-3 col-lg-12">
+                  <a class="menu-button">
+                    <img src="images/rna.png">
+                  </a>
+                  <h5>Knowledge</h5>
+                </div>
+                <div class="col-7 col-sm-9 col-lg-12"><p>Solidify the foundations of your knowledge, as our articles will build upon those.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="about-menu">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="row">
+                <div class="col-5 col-sm-3 col-lg-12">
+                  <a class="menu-button">
+                    <img src="images/story.png">
+                  </a>
+                  <h5>Our Story</h5>
+                </div>
+                <div class="col-7 col-sm-9 col-lg-12"><p>Learn more about the origins of the name of our organization and about our purpose.</p></div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="row">
+                <div class="col-5 col-sm-3 col-lg-12">
+                  <a class="menu-button">
+                    <img src="images/projects.png">
+                  </a>
+                  <h5>Our Projects</h5>
+                </div>
+                <div class="col-7 col-sm-9 col-lg-12"><p>Find out more about the projects we're currently working on, and learn how you can help.</p></div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="row">
+                <div class="col-5 col-sm-3 col-lg-12">
+                  <a class="menu-button">
+                    <img src="images/team.png">
+                  </a>
+                  <h5>Who We Are</h5>
+                </div>
+                <div class="col-7 col-sm-9 col-lg-12"><p>Get to know us! Meet the individuals that comprise our organization.</p></div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="row">
+                <div class="col-5 col-sm-3 col-lg-12">
+                  <a class="menu-button">
+                    <img src="images/contact.png">
+                  </a>
+                  <h5>Contact Us</h5>
+                </div>
+                <div class="col-7 col-sm-9 col-lg-12"><p>We're human too! All of us want to help people, and we're passionate about what we do. Let us know how we can make this experience more comfortable for you.</p></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
+  </div>
+  <div id="side-nav">
+  </div>
 
-<?php /*
+</nav>
 
-<!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js no-svg">
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-
-<?php wp_head(); ?>
-</head>
-
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
-
-	<header id="masthead" class="site-header" role="banner">
-
-		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
-
-		<?php if ( has_nav_menu( 'top' ) ) : ?>
-			<div class="navigation-top">
-				<div class="wrap">
-					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-				</div><!-- .wrap -->
-			</div><!-- .navigation-top -->
-		<?php endif; ?>
-
-	</header><!-- #masthead -->
-
-	<?php
-	// If a regular post or page, and not the front page, show the featured image.
-	if ( has_post_thumbnail() && ( is_single() || ( is_page() && ! twentyseventeen_is_frontpage() ) ) ) :
-		echo '<div class="single-featured-image-header">';
-		the_post_thumbnail( 'twentyseventeen-featured-image' );
-		echo '</div><!-- .single-featured-image-header -->';
-	endif;
-	?>
-
-	<div class="site-content-contain">
-		<div id="content" class="site-content">
-
-*/ ?>
+<div class="container">

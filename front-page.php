@@ -4,6 +4,11 @@
  **/
 get_header(); ?>
 
+  <div id="welcome">
+    <h1>Project AmaRNA</h1>
+  </div>
+  
+
 <?php // Show the selected frontpage content.
 		if ( have_posts() ) :
 			while ( have_posts() ) : the_post();
