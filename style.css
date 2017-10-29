@@ -190,3 +190,17 @@ h1, h2, h3, h4, h5, h6 {
 /*# sourceMappingURL=main.css.map */
 
 /* Disease page */
+.diseaseList {
+  height: 80vh;
+  overflow: auto;
+}
+.diseaseList .letter {
+  font-size: 40px;
+  font-weight: bold;
+}
+.diseaseList .disease {
+  padding: 10px 0px;
+}
+.diseaseList .disease:hover {
+  background: lightblue;
+}
