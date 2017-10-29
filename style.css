@@ -149,13 +149,11 @@ body {
   color: #EE0000;
   vertical-align: 0px; }
 
-input[type=text], textarea {
-  background-color: #FFF8E9;
+input[type=text], textarea, select {
   border: none;
   padding: 5px;
   font-family: "Libre Franklin";
-  width: 80vw;
-  max-width: 400px; }
+ }
 
 input:focus, textarea:focus {
   outline: none;
@@ -203,4 +201,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 .diseaseList .disease:hover {
   background: lightblue;
+}
+.diseasesFilters select, .diseasesFilters .btn,  .diseasesFilters input[type=text] {
+  border-radius: 20px;
+  border:1px solid #AAAAAA;
+}
+.diseasesFilters .btn {
+  border-right-width: 0px;
+}
+.diseasesFilters input[type=text] {
+  border-left-width: 0px;
+  background: white;
 }
